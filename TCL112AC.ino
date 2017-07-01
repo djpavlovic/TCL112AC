@@ -1,3 +1,22 @@
+/*
+* TCL112AC.ino - demonstrates how to send raw data for A/C Unit TCL112AC, 
+* or TCL TAC-12CHSA/HCI Using Arduino Uno, and IR Shield found in here: 
+* https://www.cooking-hacks.com/documentation/tutorials/control-hvac-infrared-devices-from-the-internet-with-ir-remote/
+* Also using this lib: https://github.com/z3t0/Arduino-IRremote
+* Version 0.1 1.July 2017
+* 
+* It is more efficient to use the sendNEC style function to send NEC signals.
+* Use of sendRaw_Flash here, serves only as an example of using the function to save SRAM with RAW signals.
+* 
+* Typical Uses: Allows users to store a significant number of signals in flash for sending, without using up SRAM.
+*               This is particularly important for sending RAW AC signal. Typically only one or 2 AC signals could be stored in SRAM using the traditional sendRAW function.
+*               With this function a large number of RAW AC signals can be stored & sent from Flash on a standard Arduino, with no material SRAM overhead.
+*               For even more Flash & signal storage, consider using a Mega1280/2560 with 128K/256K of available Flash vs the standard of 32k bytes.
+*
+* SRAM usage: On the Author's dev system the Arduino IDE 1.6.8 reported only 220 SRAM usage & 8,052 bytes of Flash storage used for this sketch.
+*             In contrast, only one of the signals below will fit on a standard UNO using the example sendRAW function of IRremote (using SRAM to store the signal)
+*/
+
 #include <IRremoteInt.h>
 #include <IRremote.h>
 
