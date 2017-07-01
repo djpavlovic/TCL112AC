@@ -15,6 +15,10 @@
 *
 * SRAM usage: On the Author's dev system the Arduino IDE 1.6.8 reported only 220 SRAM usage & 8,052 bytes of Flash storage used for this sketch.
 *             In contrast, only one of the signals below will fit on a standard UNO using the example sendRAW function of IRremote (using SRAM to store the signal)
+* reference issues: 
+* https://www.analysir.com/blog/2016/04/11/sending-long-ac-signals-flash-irremote/
+* https://github.com/z3t0/Arduino-IRremote/issues/480
+* https://github.com/djpavlovic/TCL112AC
 */
 
 #include <IRremoteInt.h>
